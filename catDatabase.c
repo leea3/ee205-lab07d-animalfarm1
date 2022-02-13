@@ -11,10 +11,11 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 #include <stdbool.h>
+#include <string.h>
 #include "catDatabase.h"
 
-const int MAX_CATS = 10;
-const int CATNAME_CHARLIMIT = 30;
+#define MAX_CATS 10
+#define CATNAME_CHARLIMIT 30
 
 int numberofcats;
 
@@ -24,3 +25,17 @@ enum Gender catGender[MAX_CATS];
 enum Breed catBreed[MAX_CATS];
 bool catFixed[MAX_CATS];
 double catWeight[MAX_CATS];
+
+
+//initializes database to default
+void initializeDatabase( ) {
+   memset( catName , '-' , 30 );
+
+   for( int i = 0 ; i < MAX_CATS ; i++ ) {
+      catGender[i] = UNKNOWN_GENDER;
+      catBreed[i] = UNKNOWN_BREED;
+      catFixed[i] = false;
+      catWeight[i] = 0.0;
+   }
+}
+

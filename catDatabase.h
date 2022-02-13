@@ -12,5 +12,7 @@
 
 #pragma once
 
-enum Gender { MALE , FEMALE , UNKNOWN };
+enum Gender { MALE , FEMALE , UNKNOWN_GENDER };
 enum Breed { MAINE_COON , MANX , SHORTHAIR , PERSIAN , SPHYNX , UNKNOWN_BREED };
+
+extern void initializeDatabase( );
