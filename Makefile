@@ -24,6 +24,9 @@ all: $(TARGET)
 main.o: main.c
 	$(CC) $(CFLAGS) -c main.c
 
+catDatabase.o: catDatabase.c catDatabase.h
+	$(CC) $(CFLAGS) -c catDatabase.c
+
 animalFarm: main.o
 	$(CC) $(CFLAGS) -o $(TARGET) main.o
 
