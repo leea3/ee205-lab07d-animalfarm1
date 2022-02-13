@@ -27,6 +27,9 @@ main.o: main.c catDatabase.h
 catDatabase.o: catDatabase.c catDatabase.h
 	$(CC) $(CFLAGS) -c catDatabase.c
 
+addCats.o: addCats.c addCats.h
+	$(CC) $(CFLAGS) -c addCats.c
+
 animalFarm: main.o catDatabase.o
 	$(CC) $(CFLAGS) -o $(TARGET) main.o catDatabase.o
 
