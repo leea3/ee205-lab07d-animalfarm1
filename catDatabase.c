@@ -10,4 +10,17 @@
 /// @date   21 Feb 2022
 ///////////////////////////////////////////////////////////////////////////////
 
+#include <stdbool.h>
+#include "catDatabase.h"
 
+const int MAX_CATS = 10;
+const int CATNAME_CHARLIMIT = 30;
+
+int numberofcats;
+
+//stored arrays as global variables
+char catName[MAX_CATS][CATNAME_CHARLIMIT];
+enum Gender catGender[MAX_CATS];
+enum Breed catBreed[MAX_CATS];
+bool catFixed[MAX_CATS];
+double catWeight[MAX_CATS];

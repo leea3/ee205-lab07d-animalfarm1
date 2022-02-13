@@ -10,4 +10,7 @@
 /// @date   21 Feb 2022
 ///////////////////////////////////////////////////////////////////////////////
 
+#pragma once
 
+enum Gender { MALE , FEMALE , UNKNOWN };
+enum Breed { MAINE_COON , MANX , SHORTHAIR , PERSIAN , SPHYNX , UNKNOWN_BREED };
