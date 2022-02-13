@@ -21,14 +21,14 @@ TARGET = animalFarm
 
 all: $(TARGET)
 
-main.o: main.c
+main.o: main.c catDatabase.h
 	$(CC) $(CFLAGS) -c main.c
 
 catDatabase.o: catDatabase.c catDatabase.h
 	$(CC) $(CFLAGS) -c catDatabase.c
 
-animalFarm: main.o
-	$(CC) $(CFLAGS) -o $(TARGET) main.o
+animalFarm: main.o catDatabase.o
+	$(CC) $(CFLAGS) -o $(TARGET) main.o catDatabase.o
 
 clean:
 	rm -f $(TARGET) *.o
