@@ -26,9 +26,12 @@ enum Breed catBreed[MAX_CATS];
 bool catFixed[MAX_CATS];
 double catWeight[MAX_CATS];
 
+int numCat;
+
 
 //initializes database to default
 void initializeDatabase( ) {
+   numCat = 0;
    memset( catName , '-' , 30 );
 
    for( int i = 0 ; i < MAX_CATS ; i++ ) {
