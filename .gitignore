@@ -12,7 +12,7 @@
 ###############################################################################
 
 # Ignore all .c files (this is a .cpp lab)
-*.c
+*.cpp
 
 # Ignore all object files
 *.o
