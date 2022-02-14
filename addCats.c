@@ -19,8 +19,12 @@
 
 int addCat( char addName[] , enum Gender addGender , enum Breed addBreed , bool addFixed , double addWeight){
    
+   //validation checks
    isFull( );
-   isNameEmpty( addName );
+   validateName( addName );
+   isWeightOk( addWeight );
+
+   //add cat info to database
    strcpy(catName[numberOfCats] , addName);
    catGender[numberOfCats] = addGender;
    catBreed[numberOfCats] = addBreed;
@@ -39,12 +43,36 @@ int isFull( ) {
    else return 0;
 }
 
-int isNameEmpty( char checkName[] ) {
-
+int validateName( char checkName[] ) {
+   //check if cat's name is not blank
    if( strlen( checkName ) == 0 ) {
       printf("Error: empty cat name at index[%d]\n", numberOfCats);
       exit(0);
    }
-   else return 0;
+   
+   //checks if cat's name is shorter than max limit
+   if( strlen( checkName ) > CATNAME_CHARLIMIT ) {
+      printf("Error: cat's name at index [%d] is longer than %d characters\n", numberOfCats, CATNAME_CHARLIMIT);
+      exit(0);
+   }
+
+   //checks for duplicate cat names
+   for( int i = 0 ; i < numberOfCats ; i++ ) {
+      if( strcmp( checkName , catName[i] ) == 0 ) {
+            printf("Error: cats in index [%d] and [%d] has duplicate names of \"%s\"\n", i, numberOfCats, checkName);
+            exit(0);
+      }
+   }
+
+   return 0;
+
+}
+
+int isWeightOk( double checkWeight ) {
+   if( checkWeight <= 0.0 ){
+      printf("Error: cat at index [%d] has invalid weight of %f\n", numberOfCats , checkWeight);
+      exit(0);
+   }
+   return 0;
 }
 
