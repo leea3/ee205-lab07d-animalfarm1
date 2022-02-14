@@ -27,11 +27,14 @@ catDatabase.o: catDatabase.c catDatabase.h
 addCats.o: addCats.c addCats.h catDatabase.h
 	$(CC) $(CFLAGS) -c addCats.c
 
-main.o: main.c catDatabase.h addCats.h
+reportCats.o: reportCats.c reportCats.h catDatabase.h
+	$(CC) $(CFLAGS) -c reportCats.c
+
+main.o: main.c catDatabase.h addCats.h reportCats.h
 	$(CC) $(CFLAGS) -c main.c
 
-animalFarm: main.o catDatabase.o addCats.o
-	$(CC) $(CFLAGS) -o $(TARGET) main.o catDatabase.o addCats.o
+animalFarm: main.o catDatabase.o addCats.o reportCats.o
+	$(CC) $(CFLAGS) -o $(TARGET) main.o catDatabase.o addCats.o reportCats.o
 
 clean:
 	rm -f $(TARGET) *.o
