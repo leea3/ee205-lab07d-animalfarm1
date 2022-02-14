@@ -19,7 +19,8 @@
 
 int addCat( char addName[] , enum Gender addGender , enum Breed addBreed , bool addFixed , double addWeight){
    
-   isFull();
+   isFull( );
+   isNameEmpty( addName );
    strcpy(catName[numberOfCats] , addName);
    catGender[numberOfCats] = addGender;
    catBreed[numberOfCats] = addBreed;
@@ -32,8 +33,18 @@ int addCat( char addName[] , enum Gender addGender , enum Breed addBreed , bool 
 
 int isFull( ) {
    if( numberOfCats >= MAX_CATS ){
-      printf("Error, more cats entered than database can handle\n");
+      printf("Error, more cats entered than database can handle: CAT LIMIT = %d\n", MAX_CATS);
       exit(0);
    }
    else return 0;
 }
+
+int isNameEmpty( char checkName[] ) {
+
+   if( strlen( checkName ) == 0 ) {
+      printf("Error: empty cat name at index[%d]\n", numberOfCats);
+      exit(0);
+   }
+   else return 0;
+}
+

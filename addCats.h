@@ -16,3 +16,4 @@
 
 extern int addCat( char addName[] , enum Gender addGender , enum Breed addBreed , bool addFixed , double addWeight);
 extern int isFull( );
+extern int isNameEmpty( char checkName[] );
