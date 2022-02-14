@@ -15,3 +15,5 @@
 extern void updateCatName( int index , char newCatName[] );
 extern void fixCat( int index );
 extern void updateCatWeight( int index , double newCatWeight );
+extern int isUpdatedNameValid( char checkName[] );
+extern int isUpdatedWeightOk( double checkWeight );
