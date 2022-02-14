@@ -25,6 +25,11 @@ void printCat( int index ) {
 }
 
 
-//void printAllCats( );
-//void findCat( char findName[] );
+void printAllCats( ) {
+   for( int i = 0 ; i < numberOfCats ; i++ ) {
+   printf("cat index = [%d] name=[%s] gender=[%d] breed=[%d] isFixed=[%d] weight=[%f] \n" , i , catName[i], catGender[i] , catBreed[i] , catFixed[i] , catWeight[i]);
+   }
+}
+
+//int findCat( char findName[] );
 
