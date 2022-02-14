@@ -31,5 +31,13 @@ void printAllCats( ) {
    }
 }
 
-//int findCat( char findName[] );
+int findCat( char findName[] ){
+   for( int i = 0 ; i < numberOfCats ; i++ ) {
+      if( strcmp( findName , catName[i] ) == 0) return i;
+   }
+   printf("Error: cannot find \"%s\" in database\n" , findName);
+   exit(0);
+}
+
+
 

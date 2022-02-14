@@ -14,5 +14,5 @@
 
 extern void printCat( int index );
 extern void printAllCats( );
-//extern void findCat( char findName[] );
+extern int findCat( char findName[] );
 
