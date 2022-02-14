@@ -10,3 +10,21 @@
 /// @date   21 Feb 2022
 ///////////////////////////////////////////////////////////////////////////////
 
+#include <stdio.h>
+#include <stdbool.h>
+#include <stdlib.h>
+#include <string.h>
+#include "reportCats.h"
+#include "catDatabase.h"
+
+void printCat( int index ) {
+   if( (index < 0) | (index >= numberOfCats) ){
+      printf("animalFarm0: Bad Cat [%d]\n", index);
+   }
+   else printf("Cat Index = [%d] name=[%s] gender=[%d] breed=[%d] isFixed=[%d] weight=[%f]\n", index , catName[index] , catGender[index] , catBreed[index] , catFixed[index] , catWeight[index]);
+}
+
+
+//void printAllCats( );
+//void findCat( char findName[] );
+

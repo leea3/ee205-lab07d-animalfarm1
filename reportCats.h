@@ -10,3 +10,9 @@
 /// @date   21 Feb 2022
 ///////////////////////////////////////////////////////////////////////////////
 
+#pragma once
+
+extern void printCat( int index );
+//extern void printAllCats( );
+//extern void findCat( char findName[] );
+
