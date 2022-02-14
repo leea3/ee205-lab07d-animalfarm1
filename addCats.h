@@ -11,5 +11,7 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 #pragma once
+#include <stdbool.h>
+#include "catDatabase.h"
 
-extern int addCat( char addName[] ; enum Gender addGender ; enum Breed addBreed ; bool addFixed ; double addWeight);
+extern int addCat( char addName[] , enum Gender addGender , enum Breed addBreed , bool addFixed , double addWeight);

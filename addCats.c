@@ -11,8 +11,18 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 #include <string.h>
+#include <stdbool.h>
 #include "addCats.h"
+#include "catDatabase.h"
 
-extern int addCat( char addName[] ; enum Gender addGender ; enum Breed addBreed ; bool addFixed ; double addWeight){
+int addCat( char addName[] , enum Gender addGender , enum Breed addBreed , bool addFixed , double addWeight){
+   
+   strcpy(catName[numberOfCats] , addName);
+   catGender[numberOfCats] = addGender;
+   catBreed[numberOfCats] = addBreed;
+   catFixed[numberOfCats] = addFixed;
+   catWeight[numberOfCats] = addWeight;
+   numberOfCats = numberOfCats + 1;
 
+   return numberOfCats;
 }
