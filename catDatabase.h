@@ -13,6 +13,9 @@
 #pragma once
 #include <stdbool.h>
 
+#define MAX_CATS 10
+#define CATNAME_CHARLIMIT 30
+
 enum Gender { MALE = 0 , FEMALE = 1 , UNKNOWN_GENDER = 2 };
 enum Breed { MAINE_COON = 1 , MANX = 2 , SHORTHAIR = 3 , PERSIAN = 4 , SPHYNX = 5 , UNKNOWN_BREED = 6 };
 

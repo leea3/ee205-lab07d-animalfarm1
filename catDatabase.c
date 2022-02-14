@@ -15,9 +15,6 @@
 #include <string.h>
 #include "catDatabase.h"
 
-#define MAX_CATS 10
-#define CATNAME_CHARLIMIT 30
-
 int numberOfCats;
 
 //stored arrays as global variables
