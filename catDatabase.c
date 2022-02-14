@@ -10,6 +10,7 @@
 /// @date   21 Feb 2022
 ///////////////////////////////////////////////////////////////////////////////
 
+#include <stdio.h>
 #include <stdbool.h>
 #include <string.h>
 #include "catDatabase.h"
@@ -29,13 +30,17 @@ double catWeight[MAX_CATS];
 //initializes database to default
 void initializeDatabase( ) {
    numberOfCats= 0;
-   memset( catName , '-' , 30 );
 
    for( int i = 0 ; i < MAX_CATS ; i++ ) {
+      memset( catName[i] , '-' , 5 );
       catGender[i] = UNKNOWN_GENDER;
       catBreed[i] = UNKNOWN_BREED;
-      catFixed[i] = false;
+      catFixed[i] = true;
       catWeight[i] = 0.0;
+
+#ifdef debug
+      printf("cat name: [%s]\n", catName[MAX_CATS]);
+#endif
    }
 }
 
