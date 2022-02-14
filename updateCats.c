@@ -10,3 +10,15 @@
 /// @date   21 Feb 2022
 ///////////////////////////////////////////////////////////////////////////////
 
+#include <string.h>
+#include "updateCats.h"
+
+void updateCatName( int index , char newCatName[] ){
+
+}
+void fixCat( int index ){
+
+}
+void updateCatWeight( int index , double newCatWeight ){
+
+}

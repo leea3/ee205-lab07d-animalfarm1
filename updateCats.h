@@ -10,3 +10,8 @@
 /// @date   21 Feb 2022
 ///////////////////////////////////////////////////////////////////////////////
 
+#pragma once
+
+extern void updateCatName( int index , char newCatName[] );
+extern void fixCat( int index );
+extern void updateCatWeight( int index , double newCatWeight );
