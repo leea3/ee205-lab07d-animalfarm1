@@ -10,3 +10,9 @@
 /// @date   21 Feb 2022
 ///////////////////////////////////////////////////////////////////////////////
 
+#include <string.h>
+#include "addCats.h"
+
+extern int addCat( char addName[] ; enum Gender addGender ; enum Breed addBreed ; bool addFixed ; double addWeight){
+
+}
