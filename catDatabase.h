@@ -11,8 +11,17 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 #pragma once
+#include <stdbool.h>
 
-enum Gender { MALE , FEMALE , UNKNOWN_GENDER };
-enum Breed { MAINE_COON , MANX , SHORTHAIR , PERSIAN , SPHYNX , UNKNOWN_BREED };
+enum Gender { MALE = 0 , FEMALE = 1 , UNKNOWN_GENDER = 2 };
+enum Breed { MAINE_COON = 1 , MANX = 2 , SHORTHAIR = 3 , PERSIAN = 4 , SPHYNX = 5 , UNKNOWN_BREED = 6 };
+
+extern char catName[][30];
+extern enum Gender catGender[];
+extern enum Breed catBreed[];
+extern bool catFixed[];
+extern double catWeight[];
+
+extern int numberOfCats;
 
 extern void initializeDatabase( );
