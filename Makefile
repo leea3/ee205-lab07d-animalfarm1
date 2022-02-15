@@ -33,11 +33,14 @@ reportCats.o: reportCats.c reportCats.h catDatabase.h
 updateCats.o: updateCats.c updateCats.h catDatabase.h
 	$(CC) $(CFLAGS) -c updateCats.c
 
+deleteCats.o: deleteCats.c deleteCats.h catDatabase.h
+	$(CC) $(CFLAGS) -c deleteCats.c
+
 main.o: main.c catDatabase.h addCats.h reportCats.h
 	$(CC) $(CFLAGS) -c main.c
 
-animalFarm: main.o catDatabase.o addCats.o reportCats.o updateCats.o
-	$(CC) $(CFLAGS) -o $(TARGET) main.o catDatabase.o addCats.o reportCats.o updateCats.o
+animalFarm: main.o catDatabase.o addCats.o reportCats.o updateCats.o deleteCats.o
+	$(CC) $(CFLAGS) -o $(TARGET) main.o catDatabase.o addCats.o reportCats.o updateCats.o deleteCats.o
 
 clean:
 	rm -f $(TARGET) *.o
