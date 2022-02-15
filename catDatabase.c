@@ -29,7 +29,7 @@ void initializeDatabase( ) {
    numberOfCats= 0;
 
    for( int i = 0 ; i < MAX_CATS ; i++ ) {
-      memset( catName[i] , '-' , 5 );
+      memset( catName[i] , '-' , 10 );
       catGender[i] = UNKNOWN_GENDER;
       catBreed[i] = UNKNOWN_BREED;
       catFixed[i] = false;
