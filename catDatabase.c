@@ -32,7 +32,7 @@ void initializeDatabase( ) {
       memset( catName[i] , '-' , 5 );
       catGender[i] = UNKNOWN_GENDER;
       catBreed[i] = UNKNOWN_BREED;
-      catFixed[i] = true;
+      catFixed[i] = false;
       catWeight[i] = 0.0;
 
 #ifdef debug
