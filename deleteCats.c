@@ -16,4 +16,9 @@
 #include "catDatabase.h"
 #include "deleteCats.h"
 
-//void deleteAllCats(
+void deleteAllCats( ) {
+   
+   numberOfCats = 0;  //changes high water mark to 0 (data is still there)
+   printf("deleted all cats\n");
+
+}
