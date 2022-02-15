@@ -13,6 +13,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <stdbool.h>
 #include "updateCats.h"
 #include "catDatabase.h"
 
@@ -24,9 +25,19 @@ void updateCatName( int index , char newCatName[] ) {
 
 }
 
-//void fixCat( int index ){
+void fixCat( int index ) {
+   
+   catFixed[index] = true;    //You can't unfix a cat
 
-//void updateCatWeight( int index , double newCatWeight ){
+}
+
+void updateCatWeight( int index , double newCatWeight ) {
+
+   isUpdatedWeightOk( newCatWeight );
+
+   catWeight[index] = newCatWeight;
+
+}
 
 
 int isUpdatedNameValid( char checkName[] ) {
