@@ -22,3 +22,16 @@ void deleteAllCats( ) {
    printf("deleted all cats\n");
 
 }
+
+void deleteCat( int index ) {
+
+    for ( int i = index ; i < MAX_CATS - 1; i++ ) {  
+            strcpy( catName[i] , catName[i+1] );
+            catGender[i] = catGender[i+1];
+            catBreed[i] = catBreed[i+1];
+            catFixed[i] = catFixed[i+1];
+            catWeight[i] = catWeight[i+1];
+        }
+    numberOfCats--;
+}
+

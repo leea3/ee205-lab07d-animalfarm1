@@ -13,3 +13,5 @@
 #pragma once
 
 extern void deleteAllCats( );
+
+extern void deleteCat( int index );
