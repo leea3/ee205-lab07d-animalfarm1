@@ -5,6 +5,8 @@
 /// @file catDatabase.c
 /// @version 1.0
 ///
+/// @brief Contains global variables that contains cat information
+/// as well as a function to initialize the database
 ///
 /// @author Arthur Lee <leea3@hawaii.edu>
 /// @date   21 Feb 2022
@@ -15,6 +17,7 @@
 #include <string.h>
 #include "catDatabase.h"
 
+//stored number of cats in database as global variables
 int numberOfCats;
 
 //stored arrays as global variables
@@ -24,7 +27,6 @@ enum Breed catBreed[MAX_CATS];
 bool catFixed[MAX_CATS];
 double catWeight[MAX_CATS];
 
-//initializes database to default
 void initializeDatabase( ) {
    numberOfCats= 0;
 
@@ -35,9 +37,6 @@ void initializeDatabase( ) {
       catFixed[i] = false;
       catWeight[i] = 0.0;
 
-#ifdef debug
-      printf("cat name: [%s]\n", catName[MAX_CATS]);
-#endif
    }
 }
 
