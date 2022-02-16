@@ -5,13 +5,14 @@
 /// @file reportCats.h
 /// @version 1.0
 ///
+/// @brief prints the cat information at given index or prints the entire
+/// database. findCat() locates a cat in the database given a name.
 ///
 /// @author Arthur Lee <leea3@hawaii.edu>
 /// @date   21 Feb 2022
 ///////////////////////////////////////////////////////////////////////////////
 
 #include <stdio.h>
-#include <stdbool.h>
 #include <stdlib.h>
 #include <string.h>
 #include "reportCats.h"
@@ -38,6 +39,3 @@ int findCat( char findName[] ){
    printf("Error: cannot find \"%s\" in database\n" , findName);
    exit( EXIT_FAILURE );
 }
-
-
-
