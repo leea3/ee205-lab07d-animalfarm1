@@ -5,6 +5,7 @@
 /// @file addCats.c
 /// @version 1.0
 ///
+/// @brief function + validation checks for adding cats to database 
 ///
 /// @author Arthur Lee <leea3@hawaii.edu>
 /// @date   21 Feb 2022
