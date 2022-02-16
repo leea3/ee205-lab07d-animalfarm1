@@ -14,6 +14,7 @@
 #include <stdlib.h> 
 #include <string.h>
 #include "catDatabase.h"
+#include "updateCats.h"
 #include "deleteCats.h"
 
 void deleteAllCats( ) {
@@ -25,13 +26,16 @@ void deleteAllCats( ) {
 
 void deleteCat( int index ) {
 
-    for ( int i = index ; i < MAX_CATS - 1; i++ ) {  
-            strcpy( catName[i] , catName[i+1] );
-            catGender[i] = catGender[i+1];
-            catBreed[i] = catBreed[i+1];
-            catFixed[i] = catFixed[i+1];
-            catWeight[i] = catWeight[i+1];
+   if( isIndexValid(index) == 0 ) { //checks if inputted index is occupied by a cat
+      for ( int i = index ; i < MAX_CATS - 1; i++ ) {  
+         strcpy( catName[i] , catName[i+1] );
+         catGender[i] = catGender[i+1];
+         catBreed[i] = catBreed[i+1];
+         catFixed[i] = catFixed[i+1];
+         catWeight[i] = catWeight[i+1];
         }
     numberOfCats--;
+   }
+   else printf("Error: cannot delete cat at index [%d]\n", index);
 }
 
