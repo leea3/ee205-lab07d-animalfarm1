@@ -5,7 +5,9 @@
 /// @file updateCats.c
 /// @version 1.0
 ///
-///
+//// @brief Allows changes to the database given the parameters
+/// are valid.
+//
 /// @author Arthur Lee <leea3@hawaii.edu>
 /// @date   21 Feb 2022
 ///////////////////////////////////////////////////////////////////////////////
@@ -19,9 +21,9 @@
 
 int updateCatName( int index , char newCatName[] ) {
 
-   if( isUpdatedNameValid( newCatName ) == 1 ) return 0;
+   if( isUpdatedNameValid( newCatName ) == 1 ) return 1;
 
-   if( isIndexValid( index ) == 1 ) return 0;
+   if( isIndexValid( index ) == 1 ) return 1;
 
    strcpy(catName[index] , newCatName);
    printf("cat at index [%d] has a new name: [%s]\n", index, catName[index]);
@@ -31,7 +33,7 @@ int updateCatName( int index , char newCatName[] ) {
 
 int fixCat( int index ) {
    
-   if( isIndexValid( index ) == 1 ) return 0;
+   if( isIndexValid( index ) == 1 ) return 1;
 
    catFixed[index] = true;    //You can't unfix a cat
    printf("[%s] at index [%d] has been fixed\n", catName[index] , index);
