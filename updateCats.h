@@ -12,8 +12,10 @@
 
 #pragma once
 
-extern void updateCatName( int index , char newCatName[] );
-extern void fixCat( int index );
-extern void updateCatWeight( int index , double newCatWeight );
+extern int updateCatName( int index , char newCatName[] );
+extern int fixCat( int index );
+extern int updateCatWeight( int index , double newCatWeight );
+
+extern int isIndexValid( int index );
 extern int isUpdatedNameValid( char checkName[] );
 extern int isUpdatedWeightOk( double checkWeight );
