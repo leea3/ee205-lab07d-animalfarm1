@@ -5,13 +5,14 @@
 /// @file deleteCats.c
 /// @version 1.0
 ///
+/// @brief contains functions that deletes all cats from the database
+/// or only one cat.
 ///
 /// @author Arthur Lee <leea3@hawaii.edu>
 /// @date   21 Feb 2022
 ///////////////////////////////////////////////////////////////////////////////
 
 #include <stdio.h>
-#include <stdlib.h> 
 #include <string.h>
 #include "catDatabase.h"
 #include "updateCats.h"
@@ -19,7 +20,7 @@
 
 void deleteAllCats( ) {
    
-   numberOfCats = 0;  //changes high water mark to 0 (data is still there)
+   numberOfCats = 0;  //changes global variable found in catDatabase.h to 0
    printf("deleted all cats\n");
 
 }
@@ -38,4 +39,3 @@ void deleteCat( int index ) {
    }
    else printf("Error: cannot delete cat at index [%d]\n", index);
 }
-
