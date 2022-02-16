@@ -36,7 +36,7 @@ int findCat( char findName[] ){
       if( strcmp( findName , catName[i] ) == 0) return i;
    }
    printf("Error: cannot find \"%s\" in database\n" , findName);
-   exit(0);
+   exit( EXIT_FAILURE );
 }
 
 
