@@ -5,6 +5,10 @@
 /// @file main.c
 /// @version 1.0
 ///
+/// @brief This program is a simple database of cats in which entries can be updated,
+/// displayed, and deleted.
+///
+/// @note: Database is stored as global variables 
 ///
 /// @author Arthur Lee <leea3@hawaii.edu>
 /// @date   21 Feb 2022
@@ -19,8 +23,6 @@
 #include "reportCats.h"
 #include "updateCats.h"
 #include "deleteCats.h"
-
-//#define DEBUG
 
 int main(){
    printf("Starting Animal Farm 0\n");
@@ -52,14 +54,6 @@ int main(){
 
    deleteAllCats();
    printAllCats();   
-
-#ifdef DEBUG
-
-   for( int i = 0 ; i < MAX_CATS ; i++ ) {
-   printf("cat index = [%d] name=[%s] gender=[%d] breed=[%d] isFixed=[%d] weight=[%f] \n" , i , catName[i], catGender[i] , catBreed[i] , catFixed[i] , catWeight[i]);
-   }
-
-#endif
 
    printf("Done with Animal Farm 0\n");
 }
