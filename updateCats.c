@@ -67,14 +67,14 @@ int isUpdatedNameValid( char checkName[] ) {
    
    //checks if cat's name is shorter than max limit
    if( strlen( checkName ) > CATNAME_CHARLIMIT ) {
-      printf("Error: updated cat's name is longer than %d characters\n", CATNAME_CHARLIMIT);
+      printf("Error: Entered cat's name is longer than %d characters\n", CATNAME_CHARLIMIT);
       return 1;
    }
 
    //checks for duplicate cat names
    for( int i = 0 ; i < numberOfCats ; i++ ) {
       if( strcmp( checkName , catName[i] ) == 0 ) {
-            printf("Error: \"%s\" is a duplicate cat name as in index [%d] \n", checkName, i);
+            printf("Error: \"%s\" conflicts with cat in index [%d] \n", checkName, i);
             return 1;
       }
    }
@@ -83,7 +83,7 @@ int isUpdatedNameValid( char checkName[] ) {
 
 int isUpdatedWeightOk( double checkWeight ) {
    if( checkWeight <= 0.0 ){
-      printf("Error: updated cat has invalid weight of %f\n", checkWeight);
+      printf("Error: [%f] is an invalid weight \n", checkWeight);
       return 1;
    }
    return 0;
