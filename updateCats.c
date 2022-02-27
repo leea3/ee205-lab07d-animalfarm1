@@ -64,7 +64,7 @@ int isIndexValid( int index ) {
 int isUpdatedNameValid( char checkName[] ) {
     //check if cat's name is not blank
    if( strlen( checkName ) == 0 ) {
-      fprintf( stderr, "Error: updated name is blank\n", PROGRAM_NAME);
+      fprintf( stderr, "%s: updated name is blank\n", PROGRAM_NAME);
       return 1;
    }
    
