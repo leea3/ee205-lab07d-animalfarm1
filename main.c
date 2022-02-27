@@ -1,6 +1,6 @@
 ///////////////////////////////////////////////////////////////////////////////
 ///         University of Hawaii, College of Engineering
-/// @brief  Lab 05d - Animal Farm 0 - EE 205 - Spr 2022
+/// @brief  Lab 07d - Animal Farm 1 - EE 205 - Spr 2022
 ///
 /// @file main.c
 /// @version 1.0
@@ -11,7 +11,7 @@
 /// @note: Database is stored as global variables 
 ///
 /// @author Arthur Lee <leea3@hawaii.edu>
-/// @date   21 Feb 2022
+/// @date   10 Mar 2022
 ///////////////////////////////////////////////////////////////////////////////
 
 #include <stdio.h>
