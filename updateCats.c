@@ -18,6 +18,7 @@
 #include <stdbool.h>
 #include "updateCats.h"
 #include "catDatabase.h"
+#define PROGRAM_NAME ("updateCats.c")
 
 int updateCatName( int index , char newCatName[] ) {
 
@@ -54,7 +55,7 @@ int updateCatWeight( int index , double newCatWeight ) {
 
 int isIndexValid( int index ) {
    if( (index < 0) || (index > numberOfCats - 1) ){
-      printf("Error: Index [%d] does not exist\n", index);
+      fprintf( stderr, "%s: Index [%d] does not exist\n", PROGRAM_NAME, index);
       return 1;
    }
    else return 0;
@@ -63,20 +64,20 @@ int isIndexValid( int index ) {
 int isUpdatedNameValid( char checkName[] ) {
     //check if cat's name is not blank
    if( strlen( checkName ) == 0 ) {
-      printf("Error: updated name is blank\n");
+      fprintf( stderr, "Error: updated name is blank\n", PROGRAM_NAME);
       return 1;
    }
    
    //checks if cat's name is shorter than max limit
    if( strlen( checkName ) > CATNAME_CHARLIMIT ) {
-      printf("Error: Entered cat's name is longer than %d characters\n", CATNAME_CHARLIMIT);
+      fprintf( stderr, "%s: Entered cat's name is longer than %d characters\n", PROGRAM_NAME, CATNAME_CHARLIMIT);
       return 1;
    }
 
    //checks for duplicate cat names
    for( int i = 0 ; i < numberOfCats ; i++ ) {
       if( strcmp( checkName , catName[i] ) == 0 ) {
-            printf("Error: \"%s\" conflicts with cat in index [%d] \n", checkName, i);
+            fprintf( stderr, "%s: \"%s\" conflicts with cat in index [%d] \n", PROGRAM_NAME, checkName, i);
             return 1;
       }
    }
@@ -85,7 +86,7 @@ int isUpdatedNameValid( char checkName[] ) {
 
 int isUpdatedWeightOk( double checkWeight ) {
    if( checkWeight <= 0.0 ){
-      printf("Error: [%f] is an invalid weight \n", checkWeight);
+      fprintf( stderr, "%s: [%f] is an invalid weight \n", PROGRAM_NAME, checkWeight);
       return 1;
    }
    return 0;

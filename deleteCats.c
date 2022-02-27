@@ -17,6 +17,7 @@
 #include "catDatabase.h"
 #include "updateCats.h"
 #include "deleteCats.h"
+#define PROGRAM_NAME ("deleteCats.c")
 
 void deleteAllCats( ) {
    
@@ -37,5 +38,5 @@ void deleteCat( int index ) {
         }
     numberOfCats--;
    }
-   else printf("Error: cannot delete cat at index [%d]\n", index);
+   else fprintf( stderr, "%s: cannot delete cat at index [%d]\n", PROGRAM_NAME, index);
 }

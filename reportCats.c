@@ -17,10 +17,11 @@
 #include <string.h>
 #include "reportCats.h"
 #include "catDatabase.h"
+#define PROGRAM_NAME ("reportCats.c")
 
 void printCat( int index ) {
    if( (index < 0) | (index >= numberOfCats) ){
-      printf("animalFarm0: Bad Cat [%d]\n", index);
+      fprintf( stderr, "%s: Bad Cat [%d]\n", PROGRAM_NAME, index);
    }
    else printf("Cat Index = [%d] name=[%s] gender=[%d] breed=[%d] isFixed=[%d] weight=[%f]\n", index , catName[index] , catGender[index] , catBreed[index] , catFixed[index] , catWeight[index]);
 }
@@ -36,6 +37,6 @@ int findCat( char findName[] ){
    for( int i = 0 ; i < numberOfCats ; i++ ) {
       if( strcmp( findName , catName[i] ) == 0) return i;
    }
-   printf("Error: cannot find \"%s\" in database\n" , findName);
+   fprintf( stderr, "%s: cannot find \"%s\" in database\n" , PROGRAM_NAME, findName);
    exit( EXIT_FAILURE );
 }
