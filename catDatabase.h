@@ -21,6 +21,14 @@
 enum Gender {  UNKNOWN_GENDER = 0 , MALE = 1 , FEMALE = 2 };
 enum Breed { UNKNOWN_BREED = 0 , MAINE_COON = 1 , MANX = 2 , SHORTHAIR = 3 , PERSIAN = 4 , SPHYNX = 5 };
 
+struct cat_database{
+    char catName[CATNAME_CHARLIMIT];
+    enum Gender catGender;
+    enum Breed catBreed;
+    bool catFixed;
+    double catWeight;
+};
+
 //Note: arrays held as global variables
 extern char catName[][CATNAME_CHARLIMIT];
 extern enum Gender catGender[];
