@@ -15,8 +15,6 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 #include <stdbool.h>
 #include "addCats.h"
 #include "catDatabase.h"
@@ -26,7 +24,7 @@
 
 int main(){
    printf("Starting Animal Farm 0\n");
-   
+
    initializeDatabase( );
 
    addCat( "Loki", MALE, PERSIAN, true, 8.5 ) ;

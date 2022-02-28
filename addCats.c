@@ -16,7 +16,6 @@
 #include <string.h>
 #include <stdbool.h>
 #include "addCats.h"
-#include "catDatabase.h"
 #define PROGRAM_NAME ("addCats.c")
 
 int addCat( char addName[] , enum Gender addGender , enum Breed addBreed , bool addFixed , double addWeight){
@@ -27,11 +26,11 @@ int addCat( char addName[] , enum Gender addGender , enum Breed addBreed , bool 
    isWeightOk( addWeight );
 
    //add cat info to database
-   strcpy(catName[numberOfCats] , addName);
-   catGender[numberOfCats] = addGender;
-   catBreed[numberOfCats] = addBreed;
-   catFixed[numberOfCats] = addFixed;
-   catWeight[numberOfCats] = addWeight;
+   strcpy(catabase[numberOfCats].name , addName);
+    catabase[numberOfCats].gender = addGender;
+    catabase[numberOfCats].breed = addBreed;
+    catabase[numberOfCats].fixed = addFixed;
+    catabase[numberOfCats].weight = addWeight;
    numberOfCats++;
 
    return numberOfCats;
@@ -60,7 +59,7 @@ int validateName( char checkName[] ) {
 
    //checks for duplicate cat names
    for( int i = 0 ; i < numberOfCats ; i++ ) {
-      if( strcmp( checkName , catName[i] ) == 0 ) {
+      if( strcmp( checkName , catabase[i].name ) == 0 ) {
             fprintf( stderr, "%s: cats in index [%d] and [%d] has duplicate names of \"%s\"\n", PROGRAM_NAME, i, numberOfCats, checkName);
             exit( EXIT_FAILURE);
       }

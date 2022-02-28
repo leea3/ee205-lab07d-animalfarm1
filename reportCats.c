@@ -16,26 +16,27 @@
 #include <stdlib.h>
 #include <string.h>
 #include "reportCats.h"
-#include "catDatabase.h"
 #define PROGRAM_NAME ("reportCats.c")
 
 void printCat( int index ) {
    if( (index < 0) | (index >= numberOfCats) ){
       fprintf( stderr, "%s: Bad Cat [%d]\n", PROGRAM_NAME, index);
    }
-   else printf("Cat Index = [%d] name=[%s] gender=[%d] breed=[%d] isFixed=[%d] weight=[%f]\n", index , catName[index] , catGender[index] , catBreed[index] , catFixed[index] , catWeight[index]);
+   else printf("Cat Index = [%d] name=[%s] gender=[%d] breed=[%d] isFixed=[%d] weight=[%f]\n", index , catabase[index].name ,
+               catabase[index].gender , catabase[index].breed , catabase[index].fixed , catabase[index].weight);
 }
 
 
 void printAllCats( ) {
    for( int i = 0 ; i < numberOfCats ; i++ ) {
-   printf("cat index = [%d] name=[%s] gender=[%d] breed=[%d] isFixed=[%d] weight=[%f] \n" , i , catName[i], catGender[i] , catBreed[i] , catFixed[i] , catWeight[i]);
+   printf("cat index = [%d] name=[%s] gender=[%d] breed=[%d] isFixed=[%d] weight=[%f] \n" , i , catabase[i].name, catabase[i].gender ,
+          catabase[i].breed , catabase[i].fixed , catabase[i].weight);
    }
 }
 
 int findCat( char findName[] ){
    for( int i = 0 ; i < numberOfCats ; i++ ) {
-      if( strcmp( findName , catName[i] ) == 0) return i;
+      if( strcmp( findName , catabase[i].name ) == 0) return i;
    }
    fprintf( stderr, "%s: cannot find \"%s\" in database\n" , PROGRAM_NAME, findName);
    exit( EXIT_FAILURE );

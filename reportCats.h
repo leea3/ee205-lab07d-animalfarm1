@@ -13,6 +13,7 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 #pragma once
+#include "catDatabase.h"
 
 /* Prints database contents at a specified index
  * 

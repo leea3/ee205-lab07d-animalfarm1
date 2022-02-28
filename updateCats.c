@@ -14,10 +14,8 @@
 
 #include <stdio.h>
 #include <string.h>
-#include <stdlib.h>
 #include <stdbool.h>
 #include "updateCats.h"
-#include "catDatabase.h"
 #define PROGRAM_NAME ("updateCats.c")
 
 int updateCatName( int index , char newCatName[] ) {
@@ -26,8 +24,8 @@ int updateCatName( int index , char newCatName[] ) {
 
    if( isIndexValid( index ) == 1 ) return 1;
 
-   strcpy(catName[index] , newCatName);
-   printf("cat at index [%d] has a new name: [%s]\n", index, catName[index]);
+   strcpy(catabase[index].name , newCatName);
+   printf("cat at index [%d] has a new name: [%s]\n", index, catabase[index].name);
    return 0;
 
 }
@@ -36,8 +34,8 @@ int fixCat( int index ) {
    
    if( isIndexValid( index ) == 1 ) return 1;
 
-   catFixed[index] = true;    //You can't unfix a cat
-   printf("[%s] at index [%d] has been fixed\n", catName[index] , index);
+   catabase[index].fixed = true;    //You can't unfix a cat
+   printf("[%s] at index [%d] has been fixed\n", catabase[index].name , index);
    return 0;
 
 }
@@ -47,8 +45,8 @@ int updateCatWeight( int index , double newCatWeight ) {
    if( isUpdatedWeightOk( newCatWeight ) == 1 ) return 1;
    if( isIndexValid( index ) == 1 ) return 1;
 
-   catWeight[index] = newCatWeight;
-   printf("[%s] at index [%d] has a new weight of %f\n", catName[index], index, catWeight[index]);
+    catabase[index].weight = newCatWeight;
+   printf("[%s] at index [%d] has a new weight of %f\n", catabase[index].name, index, catabase[index].weight);
    return 0;
 
 }
@@ -76,7 +74,7 @@ int isUpdatedNameValid( char checkName[] ) {
 
    //checks for duplicate cat names
    for( int i = 0 ; i < numberOfCats ; i++ ) {
-      if( strcmp( checkName , catName[i] ) == 0 ) {
+      if( strcmp( checkName , catabase[i].name ) == 0 ) {
             fprintf( stderr, "%s: \"%s\" conflicts with cat in index [%d] \n", PROGRAM_NAME, checkName, i);
             return 1;
       }

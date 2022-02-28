@@ -24,19 +24,19 @@ all: $(TARGET)
 catDatabase.o: catDatabase.c catDatabase.h
 	$(CC) $(CFLAGS) -c catDatabase.c
 
-addCats.o: addCats.c addCats.h catDatabase.h
+addCats.o: addCats.c addCats.c
 	$(CC) $(CFLAGS) -c addCats.c
 
-reportCats.o: reportCats.c reportCats.h catDatabase.h
+reportCats.o: reportCats.c reportCats.h
 	$(CC) $(CFLAGS) -c reportCats.c
 
-updateCats.o: updateCats.c updateCats.h catDatabase.h
+updateCats.o: updateCats.c updateCats.h
 	$(CC) $(CFLAGS) -c updateCats.c
 
-deleteCats.o: deleteCats.c deleteCats.h catDatabase.h
+deleteCats.o: deleteCats.c deleteCats.h
 	$(CC) $(CFLAGS) -c deleteCats.c
 
-main.o: main.c catDatabase.h addCats.h reportCats.h
+main.o: main.c addCats.h reportCats.h catDatabase.h updateCats.h deleteCats.h
 	$(CC) $(CFLAGS) -c main.c
 
 animalFarm: main.o catDatabase.o addCats.o reportCats.o updateCats.o deleteCats.o
