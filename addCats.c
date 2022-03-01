@@ -18,7 +18,8 @@
 #include "addCats.h"
 #define PROGRAM_NAME ("addCats.c")
 
-int addCat( char addName[] , enum Gender addGender , enum Breed addBreed , bool addFixed , double addWeight){
+int addCat( char addName[] , enum Gender addGender , enum Breed addBreed , bool addFixed , double addWeight,
+        enum Color addCollar1, enum Color addCollar2, unsigned long long addLicense ){
    
    //validation checks
    isFull( );
@@ -31,6 +32,10 @@ int addCat( char addName[] , enum Gender addGender , enum Breed addBreed , bool 
     catabase[numberOfCats].breed = addBreed;
     catabase[numberOfCats].fixed = addFixed;
     catabase[numberOfCats].weight = addWeight;
+    catabase[numberOfCats].collarColor1 = addCollar1;
+    catabase[numberOfCats].collarColor2 = addCollar2;
+    catabase[numberOfCats].license = addLicense;
+
    numberOfCats++;
 
    return numberOfCats;

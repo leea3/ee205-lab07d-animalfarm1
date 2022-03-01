@@ -23,7 +23,8 @@
  * @param is the cat fixed
  * @param weight of the cat
  */
-extern int addCat( char addName[] , enum Gender addGender , enum Breed addBreed , bool addFixed , double addWeight);
+extern int addCat( char addName[] , enum Gender addGender , enum Breed addBreed , bool addFixed , double addWeight,
+                   enum Color addCollar1, enum Color addCollar2, unsigned long long addLicense );
 
 /* Checks if the number of cats exceeds the database limit
  *

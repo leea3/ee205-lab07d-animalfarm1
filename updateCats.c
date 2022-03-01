@@ -24,8 +24,10 @@ int updateCatName( int index , char newCatName[] ) {
 
    if( isIndexValid( index ) == 1 ) return 1;
 
-   strcpy(catabase[index].name , newCatName);
-   printf("cat at index [%d] has a new name: [%s]\n", index, catabase[index].name);
+   else {
+       strcpy(catabase[index].name, newCatName);
+       printf("cat at index [%d] has a new name: [%s]\n", index, catabase[index].name);
+   }
    return 0;
 
 }

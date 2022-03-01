@@ -26,11 +26,11 @@ struct cat_database{
     char name[CATNAME_CHARLIMIT];
     enum Gender gender;
     enum Breed breed;
-    enum Color collarColor1;
-    enum Color collarcolor2;
-    unsigned long long license;
     bool fixed;
     double weight;
+    enum Color collarColor1;
+    enum Color collarColor2;
+    unsigned long long license;
 };
 
 extern struct cat_database catabase[MAX_CATS];

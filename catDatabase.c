@@ -30,6 +30,9 @@ void initializeDatabase( ) {
       catabase[i].breed = UNKNOWN_BREED;
       catabase[i].fixed = false;
       catabase[i].weight = 0.0;
+      catabase[numberOfCats].collarColor1 = BLACK;
+      catabase[numberOfCats].collarColor2 = WHITE;
+      catabase[numberOfCats].license = 000;
    }
 }
 

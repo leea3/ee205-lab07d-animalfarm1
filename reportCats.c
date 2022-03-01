@@ -22,15 +22,19 @@ void printCat( int index ) {
    if( (index < 0) | (index >= numberOfCats) ){
       fprintf( stderr, "%s: Bad Cat [%d]\n", PROGRAM_NAME, index);
    }
-   else printf("Cat Index = [%d] name=[%s] gender=[%d] breed=[%d] isFixed=[%d] weight=[%f]\n", index , catabase[index].name ,
-               catabase[index].gender , catabase[index].breed , catabase[index].fixed , catabase[index].weight);
+   else printf("cat index = [%d] name=[%s] gender=[%d] breed=[%d] isFixed=[%d] weight=[%f] color1  = [%d] color2 = [%d] "
+               "license = [%llu] \n" , index , catabase[index].name, catabase[index].gender ,
+               catabase[index].breed , catabase[index].fixed , catabase[index].weight, catabase[index].collarColor1,
+               catabase[index].collarColor2, catabase[index].license );
 }
 
 
 void printAllCats( ) {
    for( int i = 0 ; i < numberOfCats ; i++ ) {
-   printf("cat index = [%d] name=[%s] gender=[%d] breed=[%d] isFixed=[%d] weight=[%f] \n" , i , catabase[i].name, catabase[i].gender ,
-          catabase[i].breed , catabase[i].fixed , catabase[i].weight);
+   printf("cat index = [%d] name=[%s] gender=[%d] breed=[%d] isFixed=[%d] weight=[%f] color1  = [%d] color2 = [%d] "
+          "license = [%llu] \n" , i , catabase[i].name, catabase[i].gender ,
+          catabase[i].breed , catabase[i].fixed , catabase[i].weight, catabase[i].collarColor1, catabase[i].collarColor2,
+          catabase[i].license );
    }
 }
 
