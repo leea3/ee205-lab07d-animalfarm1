@@ -53,6 +53,28 @@ extern int updateCatWeight( int index , double newCatWeight );
  *
  * @param index of the cat
  */
+
+/* Updates the cat's collar color1 at given index
+ *
+ * @param index of the cat
+ * @param new collar color
+ */
+extern int updateCatCollar1( int index , enum Color newCollarColor1 );
+
+/* Updates the cat's collar color2 at given index
+ *
+ * @param index of the cat
+ * @param new collar color
+ */
+extern int updateCatCollar2( int index , enum Color newCollarColor2 );
+
+/* Updates the cat's license at given index
+ *
+ * @param index of the cat
+ * @param license number (unsigned long long)
+ */
+extern int updateCatLicense( int index , unsigned long long updatedLicense );
+
 extern int isIndexValid( int index );
 
 /* Checks if the entered name is valid.

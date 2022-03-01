@@ -55,6 +55,27 @@ int updateCatWeight( int index , double newCatWeight ) {
 
 }
 
+int updateCatCollar1( int index , enum Color newCollarColor1 ) {
+
+    catabase[index].collarColor1 = newCollarColor1;
+    return 0;
+
+}
+
+int updateCatCollar2( int index , enum Color newCollarColor2 ) {
+
+    catabase[index].collarColor2 = newCollarColor2;
+    return 0;
+
+}
+
+int updateCatLicense( int index , unsigned long long updatedLicense ) {
+
+    catabase[index].license = updatedLicense;
+    return 0;
+
+}
+
 int isIndexValid( int index ) {
    if( (index < 0) || (index > numberOfCats - 1) ){
       fprintf( stderr, "%s: Index [%d] does not exist\n", PROGRAM_NAME, index);
