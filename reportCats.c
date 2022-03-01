@@ -22,19 +22,18 @@ void printCat( int index ) {
    if( (index < 0) | (index >= numberOfCats) ){
       fprintf( stderr, "%s: Bad Cat [%d]\n", PROGRAM_NAME, index);
    }
-   else printf("cat index = [%d] name=[%s] gender=[%d] breed=[%d] isFixed=[%d] weight=[%f] color1  = [%d] color2 = [%d] "
-               "license = [%llu] \n" , index , catabase[index].name, catabase[index].gender ,
-               catabase[index].breed , catabase[index].fixed , catabase[index].weight, catabase[index].collarColor1,
-               catabase[index].collarColor2, catabase[index].license );
+   else printf("cat index = [%d] name=[%s] gender=[%s] breed=[%s] isFixed=[%d] weight=[%f] color1  = [%s] color2 = [%s] "
+               "license = [%llu] \n" , index , catabase[index].name, genderToString( catabase[index].gender ) ,
+               breedToString( catabase[index].breed ) , catabase[index].fixed , catabase[index].weight, colorToString( catabase[index].collarColor1 ),
+               colorToString( catabase[index].collarColor2 ), catabase[index].license );
 }
-
 
 void printAllCats( ) {
    for( int i = 0 ; i < numberOfCats ; i++ ) {
-   printf("cat index = [%d] name=[%s] gender=[%d] breed=[%d] isFixed=[%d] weight=[%f] color1  = [%d] color2 = [%d] "
-          "license = [%llu] \n" , i , catabase[i].name, catabase[i].gender ,
-          catabase[i].breed , catabase[i].fixed , catabase[i].weight, catabase[i].collarColor1, catabase[i].collarColor2,
-          catabase[i].license );
+       printf("cat index = [%d] name=[%s] gender=[%s] breed=[%s] isFixed=[%d] weight=[%f] color1  = [%s] color2 = [%s] "
+              "license = [%llu] \n" , i , catabase[i].name, genderToString( catabase[i].gender ) ,
+              breedToString( catabase[i].breed ) , catabase[i].fixed , catabase[i].weight, colorToString( catabase[i].collarColor1 ),
+               colorToString( catabase[i].collarColor2 ), catabase[i].license );
    }
 }
 
@@ -44,4 +43,42 @@ int findCat( char findName[] ){
    }
    fprintf( stderr, "%s: cannot find \"%s\" in database\n" , PROGRAM_NAME, findName);
    exit( EXIT_FAILURE );
+}
+
+char* genderToString ( enum Gender convertGender ) {
+    switch( convertGender ){
+        case UNKNOWN_GENDER: return "UNKNOWN GENDER";
+        case MALE:           return "MALE";
+        case FEMALE:         return "FEMALE";
+        default: fprintf(stderr, "%s: Invalid Gender", PROGRAM_NAME);
+        break;
+    }
+    return 0;
+}
+
+char* breedToString ( enum Breed convertBreed ) {
+    switch( convertBreed ){
+        case UNKNOWN_BREED: return "UNKNOWN BREED";
+        case MAINE_COON:    return "MAINE COON";
+        case MANX:          return "MANX";
+        case SHORTHAIR:     return "SHORTHAIR";
+        case PERSIAN:       return "PERSIAN";
+        case SPHYNX:        return "SPHYNX";
+        default: fprintf(stderr, "%s: Invalid Breed", PROGRAM_NAME);
+        break;
+    }
+    return 0;
+}
+ char* colorToString ( enum Color convertColor ) {
+    switch( convertColor ){
+        case BLACK: return "BLACK";
+        case WHITE: return "WHITE";
+        case BLUE:  return "BLUE";
+        case RED:   return "RED";
+        case GREEN: return "GREEN";
+        case PINK:  return "PINK";
+        default: fprintf(stderr, "%s: Invalid Collar Color", PROGRAM_NAME);
+        break;
+    }
+    return 0;
 }

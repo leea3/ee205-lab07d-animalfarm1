@@ -34,3 +34,23 @@ extern void printAllCats( );
  */
 extern int findCat( char findName[] );
 
+/* maps gender enum to string
+ *
+ * @param gender of the cat
+ */
+extern char* genderToString ( enum Gender convertGender );
+
+/* maps breed enum to string
+ *
+ * @param breed of the cat
+ */
+extern char* breedToString ( enum Breed convertBreed );
+
+/* maps color enum to string
+ *
+ * @param color of the cat's collar
+ */
+extern char* colorToString ( enum Color convertColor );
+
+
+
