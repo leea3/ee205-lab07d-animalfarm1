@@ -22,7 +22,7 @@ int updateCatName( int index , char newCatName[] ) {
 
    if( isUpdatedNameValid( newCatName ) == 1 ) return 1;
 
-   if( isIndexValid( index ) == 1 ) return 1;
+   else if( isIndexValid( index ) == 1 ) return 1;
 
    else {
        strcpy(catabase[index].name, newCatName);
@@ -45,11 +45,13 @@ int fixCat( int index ) {
 int updateCatWeight( int index , double newCatWeight ) {
 
    if( isUpdatedWeightOk( newCatWeight ) == 1 ) return 1;
-   if( isIndexValid( index ) == 1 ) return 1;
+   else if( isIndexValid( index ) == 1 ) return 1;
 
-    catabase[index].weight = newCatWeight;
-   printf("[%s] at index [%d] has a new weight of %f\n", catabase[index].name, index, catabase[index].weight);
-   return 0;
+   else {
+       catabase[index].weight = newCatWeight;
+       printf("[%s] at index [%d] has a new weight of %f\n", catabase[index].name, index, catabase[index].weight);
+       return 0;
+   }
 
 }
 
@@ -69,7 +71,7 @@ int isUpdatedNameValid( char checkName[] ) {
    }
    
    //checks if cat's name is shorter than max limit
-   if( strlen( checkName ) > CATNAME_CHARLIMIT ) {
+   else if( strlen( checkName ) > CATNAME_CHARLIMIT ) {
       fprintf( stderr, "%s: Entered cat's name is longer than %d characters\n", PROGRAM_NAME, CATNAME_CHARLIMIT);
       return 1;
    }
@@ -89,6 +91,6 @@ int isUpdatedWeightOk( double checkWeight ) {
       fprintf( stderr, "%s: [%f] is an invalid weight \n", PROGRAM_NAME, checkWeight);
       return 1;
    }
-   return 0;
+   else return 0;
 }
 

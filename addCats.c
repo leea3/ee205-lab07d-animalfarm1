@@ -57,7 +57,7 @@ int validateName( char checkName[] ) {
    }
    
    //checks if cat's name is shorter than max limit
-   if( strlen( checkName ) > CATNAME_CHARLIMIT ) {
+   else if( strlen( checkName ) > CATNAME_CHARLIMIT ) {
       fprintf( stderr, "%s: cat's name at index [%d] is longer than %d characters\n", PROGRAM_NAME, numberOfCats, CATNAME_CHARLIMIT);
       exit( EXIT_FAILURE );
    }
