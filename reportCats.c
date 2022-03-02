@@ -41,7 +41,7 @@ int findCat( char findName[] ){
    for( int i = 0 ; i < numberOfCats ; i++ ) {
       if( strcmp( findName , catabase[i].name ) == 0) return i;
    }
-   fprintf( stderr, "%s: cannot find \"%s\" in database\n" , PROGRAM_NAME, findName);
+   fprintf( stderr, "%s: cannot find \"%s\" in database, exiting program...\n" , PROGRAM_NAME, findName);
    exit( EXIT_FAILURE );
 }
 

@@ -29,14 +29,14 @@ void deleteCat( int index ) {
 
    if( isIndexValid(index) == 0 ) { //checks if inputted index is occupied by a cat
       for ( int i = index ; i < MAX_CATS - 1; i++ ) {  
-         strcpy( catabase[i].name , catabase[i+1].name );
-         catabase[i].gender = catabase[i+1].gender;
-          catabase[i].breed = catabase[i+1].breed;
-          catabase[i].fixed = catabase[i+1].fixed;
-          catabase[i].weight = catabase[i+1].weight;
-          catabase[i].collarColor1 = catabase[i+1].collarColor1;
-          catabase[i].collarColor2 = catabase[i+1].collarColor2;
-          catabase[i].license = catabase[i+1].license;
+          strcpy( catabase[i].name ,  catabase[i+1].name );
+          catabase[i].gender        = catabase[i+1].gender;
+          catabase[i].breed         = catabase[i+1].breed;
+          catabase[i].fixed         = catabase[i+1].fixed;
+          catabase[i].weight        = catabase[i+1].weight;
+          catabase[i].collarColor1  = catabase[i+1].collarColor1;
+          catabase[i].collarColor2  = catabase[i+1].collarColor2;
+          catabase[i].license       = catabase[i+1].license;
         }
     numberOfCats--;
    }

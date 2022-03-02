@@ -36,14 +36,14 @@ int addCat( char addName[] , enum Gender addGender , enum Breed addBreed , bool 
     catabase[numberOfCats].collarColor2 = addCollar2;
     catabase[numberOfCats].license = addLicense;
 
-   numberOfCats++;
+    numberOfCats++;
 
-   return numberOfCats;
+    return (numberOfCats - 1);
 }
 
 int isFull( ) {
    if( numberOfCats >= MAX_CATS ){
-      fprintf( stderr, "%s: more cats entered than database can handle: CAT LIMIT = %d\n", PROGRAM_NAME, MAX_CATS);
+      fprintf( stderr, "%s: more cats entered than database can handle: CAT LIMIT = %d, exiting program...\n", PROGRAM_NAME, MAX_CATS);
       exit( EXIT_FAILURE );
    }
    else return 0;
@@ -52,20 +52,20 @@ int isFull( ) {
 int validateName( char checkName[] ) {
    //check if cat's name is not blank
    if( strlen( checkName ) == 0 ) {
-      fprintf( stderr, "%s: empty cat name at index[%d]\n", PROGRAM_NAME, numberOfCats);
+      fprintf( stderr, "%s: empty cat name at index[%d], exiting program...\n", PROGRAM_NAME, numberOfCats);
       exit( EXIT_FAILURE );
    }
    
    //checks if cat's name is shorter than max limit
    else if( strlen( checkName ) > CATNAME_CHARLIMIT ) {
-      fprintf( stderr, "%s: cat's name at index [%d] is longer than %d characters\n", PROGRAM_NAME, numberOfCats, CATNAME_CHARLIMIT);
+      fprintf( stderr, "%s: cat's name at index [%d] is longer than %d characters, exiting program...\n", PROGRAM_NAME, numberOfCats, CATNAME_CHARLIMIT);
       exit( EXIT_FAILURE );
    }
 
    //checks for duplicate cat names
    for( int i = 0 ; i < numberOfCats ; i++ ) {
       if( strcmp( checkName , catabase[i].name ) == 0 ) {
-            fprintf( stderr, "%s: cats in index [%d] and [%d] has duplicate names of \"%s\"\n", PROGRAM_NAME, i, numberOfCats, checkName);
+            fprintf( stderr, "%s: cats in index [%d] and [%d] has duplicate names of \"%s, exiting program...\n", PROGRAM_NAME, i, numberOfCats, checkName);
             exit( EXIT_FAILURE);
       }
    }

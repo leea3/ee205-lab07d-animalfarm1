@@ -27,8 +27,8 @@ int updateCatName( int index , char newCatName[] ) {
    else {
        strcpy(catabase[index].name, newCatName);
        printf("cat at index [%d] has a new name: [%s]\n", index, catabase[index].name);
+       return 0;
    }
-   return 0;
 
 }
 
