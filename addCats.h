@@ -41,7 +41,7 @@ extern int isFull( );
  *
  * @param name of the cat
  */
-extern int validateName( char checkName[] );
+extern int isValidName( char checkName[] );
 
 /* Checks if entered weight is a valid number
  *
@@ -50,4 +50,4 @@ extern int validateName( char checkName[] );
  *
  * @param weight of the cat
  */
-extern int isWeightOk( double checkWeight );
+extern int isValidWeight( double checkWeight );

@@ -23,8 +23,8 @@ int addCat( char addName[] , enum Gender addGender , enum Breed addBreed , bool 
    
    //validation checks
    isFull( );
-   validateName( addName );
-   isWeightOk( addWeight );
+   isValidName( addName );
+   isValidWeight( addWeight );
 
    //add cat info to database
    strcpy(catabase[numberOfCats].name , addName);
@@ -49,7 +49,7 @@ int isFull( ) {
    else return 0;
 }
 
-int validateName( char checkName[] ) {
+int isValidName( char checkName[] ) {
    //check if cat's name is not blank
    if( strlen( checkName ) == 0 ) {
       fprintf( stderr, "%s: empty cat name at index[%d], exiting program...\n", PROGRAM_NAME, numberOfCats);
@@ -74,7 +74,7 @@ int validateName( char checkName[] ) {
 
 }
 
-int isWeightOk( double checkWeight ) {
+int isValidWeight( double checkWeight ) {
    if( checkWeight <= 0.0 ){
       fprintf( stderr, "%s: cat at index [%d] has invalid weight of %f\n", PROGRAM_NAME, numberOfCats , checkWeight);
       exit( EXIT_FAILURE );
