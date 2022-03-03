@@ -75,27 +75,8 @@ extern int updateCatCollar2( int index , enum Color newCollarColor2 );
  */
 extern int updateCatLicense( int index , unsigned long long updatedLicense );
 
+/* Checks if theres a cat in the index
+ *
+ * @param index of the cat
+ */
 extern int isIndexValid( int index );
-
-/* Checks if the entered name is valid.
- *
- * Checks if name exceeds character limit, if the name is blank
- * or if the name is a duplicate of another cat.
- *
- * if valid, returns 0
- * else, returns 1
- *
- * @param name of the cat
- */
-extern int isUpdatedNameValid( char checkName[] );
-
-/* Checks if entered weight is valid
- *
- * Checks if the weight is a positive number
- *
- * if valid, returns 0
- * else, returns 1
- *
- * @param weight of the cat
- */
-extern int isUpdatedWeightOk( double checkWeight );

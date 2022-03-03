@@ -22,13 +22,7 @@
 #include "reportCats.h"
 #include "updateCats.h"
 #include "deleteCats.h"
-
-#define MAX_NAME1 "1234567890123456789012345678901234567890123456789"
-#define MAX_NAME2 "DIFFERENT 123456789012345678901234567890123456789"
-#define ILLEGAL_NAME "123456789012345678901234567890123456789012345678901"
-#define BAD_CAT (1)
-#define ERROR (1)
-#define NOERROR (0)
+#include "config.h"
 
 #define DEBUG
 int main() {
@@ -43,15 +37,15 @@ int main() {
 
 #ifdef DEBUG
     // Test for empty name
-    //assert( addCat( "", UNKNOWN_GENDER, SHORTHAIR, false, 19.0, BLACK, WHITE, 101 ) == ERROR ) ;
+    assert( addCat( "", UNKNOWN_GENDER, SHORTHAIR, false, 19.0, BLACK, WHITE, 101 ) == BAD_CAT ) ;
     // Test for max name
-    //assert( addCat( MAX_NAME1, UNKNOWN_GENDER, SHORTHAIR, false, 19.0, WHITE, RED, 107 ) != ERROR ) ;
+    assert( addCat( MAX_NAME1, UNKNOWN_GENDER, SHORTHAIR, false, 19.0, WHITE, RED, 107 ) != BAD_CAT ) ;
     // Test for name too long
-    //assert( addCat( ILLEGAL_NAME, UNKNOWN_GENDER, SHORTHAIR, false, 19.0, WHITE, BLUE, 108 ) == ERROR ) ;
+    assert( addCat( ILLEGAL_NAME, UNKNOWN_GENDER, SHORTHAIR, false, 19.0, WHITE, BLUE, 108 ) == BAD_CAT ) ;
     // Test for duplicate cat name
-    //assert( addCat( "Chili", UNKNOWN_GENDER, SHORTHAIR, false, 0, WHITE, GREEN, 109 ) == ERROR ) ;
+    assert( addCat( "Chili", UNKNOWN_GENDER, SHORTHAIR, false, 0, WHITE, GREEN, 109 ) == BAD_CAT ) ;
     // Test for weight <= 0
-    //assert( addCat( "Neo", UNKNOWN_GENDER, SHORTHAIR, false, 0, WHITE, PINK, 110 ) == ERROR ) ;
+    assert( addCat( "Neo", UNKNOWN_GENDER, SHORTHAIR, false, 0, WHITE, PINK, 110 ) == BAD_CAT ) ;
     // Test for printCat( -1 ) ;
     printCat( -1 ) ;
     // Test for out of bounds
@@ -63,7 +57,7 @@ int main() {
     // Test addCat details
     size_t testCat = addCat( "Oscar", UNKNOWN_GENDER, SHORTHAIR, false, 1.1, RED, BLACK, 111 ) ;
     printCat( testCat );
-    assert( testCat != BAD_CAT );
+    assert( testCat != ERROR );
     assert( testCat < MAX_CATS );
     // Test setting a large name
     assert( updateCatName( testCat, MAX_NAME2 ) == NOERROR ) ;
