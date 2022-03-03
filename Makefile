@@ -36,7 +36,7 @@ updateCats.o: updateCats.c updateCats.h
 deleteCats.o: deleteCats.c deleteCats.h
 	$(CC) $(CFLAGS) -c deleteCats.c
 
-main.o: main.c addCats.h reportCats.h catDatabase.h updateCats.h deleteCats.h
+main.o: main.c addCats.h reportCats.h catDatabase.h updateCats.h deleteCats.h config.h
 	$(CC) $(CFLAGS) -c main.c
 
 animalFarm: main.o catDatabase.o addCats.o reportCats.o updateCats.o deleteCats.o
